@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mission Jarvis</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="status-panel">
+      <div>Time: <span id="time"></span></div>
+      <div>Status: Online</div>
+    </div>
+
+    <div class="container">
+      <div class="jarvis-image-container pulse-ring">
+        <img
+          src="./assets/jarvis-fotor-bg-remover-2025051314193.png"
+          alt="JARVIS"
+          class="jarvis-image"
+        />
+      </div>
+
+      <!-- <h1>MISSION JARVIS</h1> -->
+      <p>I'm your Virtual Assistant JARVIS. How may I assist you today?</p>
+      <div class="waveform">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <button class="speak-button" onclick="startListening()">
+        🎙️ Talk to JARVIS
+      </button>
+    </div>
+
+    <div class="task-panel">
+      <div>Weather: Updating...</div>
+      <div>Tasks: Wake up, Study, Build JARVIS</div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
