@@ -64,36 +64,17 @@ body {
   perspective: 800px; /* space from top */
 }
 
-/* @keyframes tiltRotate {
-  0% {
-    transform: rotateY(0deg);
-  }
-  25% {
-    transform: rotateY(90deg);
-  }
-  50% {
-    transform: rotateY(180deg);
-  }
-  75% {
-    transform: rotateY(270deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-} */
-
 .jarvis-image {
   position: relative;
   z-index: 1;
-  width: 500px;
+  width: 320px;
   height: auto;
   max-width: 100%;
   display: block;
-  transform: rotate(0deg) scale(1); /* ensures symmetry */
+  margin: 0 auto;
+  transform: rotate(1.5deg); /* Try values like 1.5deg, 2deg, or -1deg */
   transform-style: preserve-3d;
- 
 }
-
 
 @keyframes pulse {
   0%,
