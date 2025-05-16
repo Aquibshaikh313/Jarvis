@@ -27,7 +27,7 @@ recognition.onresult = function (event) {
     const timeMessage = `Current time is ${now.getHours()} ${now.getMinutes()}`;
     speak(timeMessage);
   } else if (userVoice.includes("hello") || userVoice.includes("hi")) {
-    speak("Hello! I am JARVIS. What can I do for you?");
+    speak("Hello sir! I am JARVIS. What can I do for you?");
   } else {
     speak("Sorry, I didn't understand that.");
   }
