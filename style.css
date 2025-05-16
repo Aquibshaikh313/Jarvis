@@ -180,3 +180,207 @@ p {
     height: 40px;
   }
 }
+
+/* Orbitron is good, let's add a backup sleek one */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  background: linear-gradient(135deg, #000000, #0f0f1f);
+  color: #00f2ff;
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Smarter Panels - Glassmorphism effect */
+.status-panel,
+.task-panel {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+
+.container p {
+  font-size: 1.3rem;
+  color: #c2f8ff;
+  margin: 20px 0 10px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Glowing Pulse on the JARVIS image */
+.jarvis-image {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 8px #00f2ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 18px #0ff);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px #00f2ff);
+  }
+}
+
+/* Animated background lines (optional) */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.03),
+    rgba(0, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 10px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.speak-button {
+  background-color: #111;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 10px #00f2ff66;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.speak-button:hover {
+  background-color: #00f2ff;
+  color: #000;
+  box-shadow: 0 0 20px #00f2ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* When a response is shown, move JARVIS to corner */
+.jarvis-image-container.shift-corner {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transform: scale(0.6);
+  height: auto;
+  margin: 0;
+  z-index: 2;
+}
+
+/* Response grid section */
+.response-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 20px;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* Each result box */
+.response-category {
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid #00f2ff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1rem;
+  color: #00f2ff;
+  box-shadow: 0 0 10px #00f2ff40;
+  /* backdrop-filter: blur(5px); */
+  
+}
+
+
+/* ========== RESPONSIVE STYLES ========== */
+
+@media (max-width: 1024px) {
+  .jarvis-image {
+    width: 260px;
+  }
+
+  .response-section {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 16px;
+  }
+
+  .speak-button {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .jarvis-image {
+    width: 200px;
+  }
+
+  .container p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .waveform {
+    gap: 3px;
+    height: 30px;
+  }
+
+  .waveform div {
+    width: 4px;
+  }
+
+  .status-panel,
+  .task-panel {
+    font-size: 0.8rem;
+  }
+
+  .response-category {
+    font-size: 0.9rem;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jarvis-image {
+    width: 160px;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+  }
+
+  .speak-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .response-section {
+    grid-template-columns: 1fr;
+  }
+
+  .response-category {
+    font-size: 0.85rem;
+    padding: 14px;
+  }
+}
+
+
